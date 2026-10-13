@@ -1,0 +1,29 @@
+:root {
+  --fondo: #ffffff;
+  --fondo-card: #f8f9fb;
+  --texto: #1c1e21;
+  --borde: #e2e5ea;
+  --acento: #4f46e5;
+  --acento-suave: #eceafd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #14161a;
+    --fondo-card: #1c1f25;
+    --texto: #e8eaed;
+    --borde: #2c3038;
+    --acento: #8b85ff;
+    --acento-suave: #26244a;
+  }
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+a { color: var(--acento); }
+main { max-width: 960px; margin: 0 auto; padding: 2rem; }
+section { padding: 3rem 0; scroll-margin-top: 4rem; }

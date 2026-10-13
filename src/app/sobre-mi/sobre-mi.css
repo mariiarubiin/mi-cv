@@ -1,0 +1,3 @@
+﻿.rol { color: var(--acento); font-size: 1.2rem; }
+.skills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
+.skills li { padding: .3rem .8rem; border-radius: 999px; background: var(--acento-suave); }

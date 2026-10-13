@@ -1,0 +1,11 @@
+﻿header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--fondo);
+  border-bottom: 1px solid var(--borde);
+}
+nav { display: flex; gap: 1.5rem; }

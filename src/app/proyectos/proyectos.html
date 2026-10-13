@@ -1,0 +1,22 @@
+﻿<section id="proyectos">
+  <h2>Proyectos</h2>
+  <div class="grid">
+    @for (p of proyectos; track p.titulo) {
+      <article class="card">
+        <h3>{{ p.titulo }}</h3>
+        <p>{{ p.descripcion }}</p>
+        <ul class="tags">
+          @for (t of p.tecnologias; track t) {
+            <li>{{ t }}</li>
+          }
+        </ul>
+        <div class="links">
+          @if (p.web) { <a [href]="p.web" target="_blank" rel="noopener">Ver web</a> }
+          @if (p.codigo) { <a [href]="p.codigo" target="_blank" rel="noopener">Código</a> }
+        </div>
+      </article>
+    } @empty {
+      <p>Próximamente: estoy preparando mis primeros proyectos.</p>
+    }
+  </div>
+</section>
