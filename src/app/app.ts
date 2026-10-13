@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Header } from './header/header';
 import { SobreMi } from './sobre-mi/sobre-mi';
 import { Proyectos } from './proyectos/proyectos';
 import { Contacto } from './contacto/contacto';
+import { Reveal } from './reveal';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, SobreMi, Proyectos, Contacto],
+  imports: [Header, SobreMi, Proyectos, Contacto, Reveal],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

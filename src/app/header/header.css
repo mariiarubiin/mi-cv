@@ -1,11 +1,29 @@
 ﻿header {
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: var(--fondo);
   border-bottom: 1px solid var(--borde);
+  transition: background .3s ease;
 }
-nav { display: flex; gap: 1.5rem; }
+nav { display: flex; align-items: center; gap: 1.5rem; }
+nav a { text-decoration: none; position: relative; }
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--acento);
+  transition: width .25s ease;
+}
+nav a:hover::after { width: 100%; }
+.tema {
+  border: 1px solid var(--borde);
+  background: var(--fondo-card);
+  border-radius: 999px;
+  width: 2.2rem; height: 2.2rem;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+.tema:hover { transform: rotate(20deg) scale(1.1); }

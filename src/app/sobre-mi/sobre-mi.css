@@ -1,3 +1,11 @@
-﻿.rol { color: var(--acento); font-size: 1.2rem; }
+﻿.rol { color: var(--acento); font-size: 1.4rem; min-height: 2rem; }
+.cursor { animation: parpadeo 1s steps(1) infinite; margin-left: 2px; }
+@keyframes parpadeo { 50% { opacity: 0; } }
 .skills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
-.skills li { padding: .3rem .8rem; border-radius: 999px; background: var(--acento-suave); }
+.skills li {
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  background: var(--acento-suave);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.skills li:hover { transform: translateY(-3px); background: var(--acento); color: white; }

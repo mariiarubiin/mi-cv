@@ -17,3 +17,10 @@
   background: var(--acento-suave);
 }
 .links { display: flex; gap: 1rem; margin-top: 1rem; }
+
+.card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .15);
+  border-color: var(--acento);
+}

@@ -4,5 +4,8 @@
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
+    <button class="tema" (click)="alternar()" aria-label="Cambiar entre modo claro y oscuro">
+      {{ oscuro() ? '☀️' : '🌙' }}
+    </button>
   </nav>
 </header>
