@@ -7,9 +7,9 @@
 })
 export class SobreMi implements OnInit, OnDestroy {
   private frases = [
-    'Desarrolladora frontend',
+    'Desarrolladora fullstack',
     'Angular y TypeScript',
-    'Backend y bases de datos',
+    'De la interfaz a la base de datos',
   ];
   texto = signal('');
   private timer?: ReturnType<typeof setTimeout>;
