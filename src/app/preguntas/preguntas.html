@@ -1,0 +1,9 @@
+﻿<section id="preguntas">
+  <h2>Quizá te preguntes…</h2>
+  @for (i of items; track i.p) {
+    <details>
+      <summary>{{ i.p }}</summary>
+      <p>{{ i.r }}</p>
+    </details>
+  }
+</section>

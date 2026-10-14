@@ -1,11 +1,49 @@
-﻿.rol { color: var(--acento); font-size: 1.4rem; min-height: 2rem; }
+﻿.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+.rol { color: var(--coral); font-size: 1.4rem; min-height: 2rem; font-family: var(--serif); }
 .cursor { animation: parpadeo 1s steps(1) infinite; margin-left: 2px; }
 @keyframes parpadeo { 50% { opacity: 0; } }
+
+.nota {
+  display: inline-block;
+  font-size: .85rem;
+  color: var(--coral);
+  border: 1.5px solid var(--coral);
+  border-radius: 999px;
+  padding: .1rem .8rem;
+  transform: rotate(-4deg);
+  margin-bottom: .8rem;
+}
+
 .skills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
 .skills li {
-  padding: .3rem .8rem;
+  padding: .3rem .9rem;
   border-radius: 999px;
   background: var(--acento-suave);
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
-.skills li:hover { transform: translateY(-3px); background: var(--acento); color: white; }
+.skills li:hover { transform: translateY(-3px); background: var(--acento); color: #fff; }
+
+/* Mancha orgánica; cuando tengas foto, mira el comentario del mensaje */
+.foto {
+  object-fit: cover;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #c4a4ff, #f4826b 60%, #96e6c8);
+  display: grid;
+  place-items: center;
+  border-radius: 62% 38% 55% 45% / 48% 58% 42% 52%;
+  animation: morph 9s ease-in-out infinite alternate;
+  font-family: var(--serif);
+  font-size: 4rem;
+  color: #fff;
+}
+@keyframes morph {
+  50% { border-radius: 40% 60% 42% 58% / 58% 42% 60% 40%; }
+  100% { border-radius: 55% 45% 62% 38% / 42% 55% 45% 58%; }
+}
+
+.foto { width: 100%; object-fit: cover; }
+
+.foto { width: 100%; object-fit: cover; }
+
+.foto { width: 100%; object-fit: cover; }

@@ -1,43 +1,78 @@
-﻿:root {
-  --fondo: #ffffff;
-  --fondo-card: #f8f9fb;
-  --texto: #1c1e21;
-  --borde: #e2e5ea;
-  --acento: #4f46e5;
-  --acento-suave: #eceafd;
+﻿@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --fondo: #fffbea;
+  --fondo-card: #fff6dd;
+  --texto: #3b2f2a;
+  --borde: #ecdcc4;
+  --acento: #8b5cf6;
+  --acento-suave: #efe7ff;
+  --coral: #f4826b;
+  --arena: #b0815a;
+  --serif: 'Fraunces', Georgia, serif;
 }
 :root[data-theme='dark'] {
-  --fondo: #14161a;
-  --fondo-card: #1c1f25;
-  --texto: #e8eaed;
-  --borde: #2c3038;
-  --acento: #8b85ff;
-  --acento-suave: #26244a;
+  --fondo: #17141f;
+  --fondo-card: #211c2b;
+  --texto: #f3ece4;
+  --borde: #3a3248;
+  --acento: #b79bff;
+  --acento-suave: #2d2545;
+  --coral: #ff9a85;
+  --arena: #d9a982;
 }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--fondo);
   color: var(--texto);
-  line-height: 1.6;
+  line-height: 1.7;
   transition: background .3s ease, color .3s ease;
 }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); color: var(--acento); }
+h2 { font-size: clamp(2rem, 5vw, 3rem); color: var(--arena); }
 a { color: var(--acento); }
 main { max-width: 960px; margin: 0 auto; padding: 2rem; }
-section { padding: 3rem 0; scroll-margin-top: 4rem; }
+section { padding: 3.5rem 0; scroll-margin-top: 4rem; }
 
-/* Los componentes son inline por defecto; necesitan ser block para animarse */
-app-sobre-mi, app-proyectos, app-contacto { display: block; }
+/* Fondo con degradados que se mueven */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 40% at 20% 20%, rgba(196, 164, 255, .45), transparent 70%),
+    radial-gradient(35% 35% at 80% 30%, rgba(244, 130, 107, .30), transparent 70%),
+    radial-gradient(40% 40% at 60% 85%, rgba(150, 230, 200, .35), transparent 70%);
+  filter: blur(40px);
+  animation: flotar 18s ease-in-out infinite alternate;
+}
+:root[data-theme='dark'] body::before { opacity: .5; }
+@keyframes flotar {
+  to { transform: translate(6%, -4%) rotate(8deg) scale(1.1); }
+}
+
+/* Botón en píldora */
+.boton {
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  border-radius: 999px;
+  background: var(--coral);
+  color: #fff;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.boton:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(244, 130, 107, .4); }
+
+app-sobre-mi, app-proyectos, app-preguntas, app-contacto { display: block; }
 app-header { display: block; position: sticky; top: 0; z-index: 10; }
 
-/* Aparición al hacer scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s ease, transform .6s ease;
-}
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  body::before { animation: none; }
 }

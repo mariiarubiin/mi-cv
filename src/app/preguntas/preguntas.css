@@ -1,0 +1,20 @@
+﻿details { border-bottom: 1px solid var(--borde); padding: 1rem 0; }
+summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  display: flex;
+  gap: .8rem;
+  align-items: baseline;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: '+';
+  color: var(--coral);
+  font-size: 1.6rem;
+  transition: transform .25s ease;
+}
+details[open] summary::before { transform: rotate(45deg); }
+details p { margin: .6rem 0 0 2rem; animation: entrar .4s ease; }
+@keyframes entrar { from { opacity: 0; transform: translateY(-6px); } }
